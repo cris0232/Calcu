@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora Avanzada de Gradiente Descendente</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        table { margin-top: 20px; border-collapse: collapse; }
+        th, td { padding: 8px 12px; border: 1px solid #ccc; text-align: center; }
+        th { background-color: #f4f4f4; }
+        form { margin-bottom: 20px; }
+        label { display: inline-block; width: 250px; margin-bottom: 10px; }
+        input, select { padding: 5px; width: 200px; }
+        input[type="submit"] { width: auto; }
+    </style>
+</head>
+<body>
+    <h1>Calculadora Avanzada de Gradiente Descendente</h1>
+    
+    <form method="post" action="calcular_gradiente.php">
+        <label for="num_iteraciones">Número de Iteraciones:</label>
+        <input type="number" id="num_iteraciones" name="num_iteraciones" required><br><br>
+        
+        <label for="tasa_aprendizaje">Tasa de Aprendizaje:</label>
+        <input type="number" id="tasa_aprendizaje" name="tasa_aprendizaje" step="0.01" min="0" max="1" value="0.1" required><br><br>
+
+        <label for="funcion_costo">Función de Costo:</label>
+        <select id="funcion_costo" name="funcion_costo" required>
+            <option value="">Seleccione una función de costo</option>
+            <option value="cuadratica">Cuadrática</option>
+            <option value="absoluta">Absoluta</option>
+        </select><br><br>
+        
+        <label for="tipo_gradiente">Tipo de Gradiente:</label>
+        <select id="tipo_gradiente" name="tipo_gradiente" required>
+            <option value="">Seleccione un tipo de gradiente</option>
+            <option value="batch">Batch</option>
+            <option value="estocastico">Estocástico</option>
+        </select><br><br>
+        
+        <label for="tamano_lote">Tamaño del Lote (para Estocástico):</label>
+        <input type="number" id="tamano_lote" name="tamano_lote" min="1" max="100" value="10" required><br><br>
+        
+        <input type="submit" value="Calcular">
+    </form>
+</body>
+</html>
